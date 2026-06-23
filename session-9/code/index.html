@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #one {
+        border: 1px solid black;
+        background-color: pink;
+        height: 120px;
+      }
+
+      #two {
+        background-color: orange;
+        height: 80px;
+      }
+
+      #three {
+        background-color: palegreen;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="one">
+      1
+      <div id="two">
+        2
+        <div id="three">3</div>
+      </div>
+    </div> -->
+
+    <p id="sample" onclick="display()">Gigame</p>
+
+    <!-- <p onmouseover="alert('mouseover')" style="background-color: aqua">Lorem</p>
+    <p onmouseleave="alert('mouseleave')" style="background-color: aqua">
+      Lorem
+    </p>
+    <p onmouseenter="alert('mouseenter')" style="background-color: aqua">
+      Lorem
+    </p> -->
+
+    <!-- form events  -->
+    <form>
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        placeholder="Please enter name"
+        id="firstname"
+        name="firstname"
+        value=""
+        oninput="captureName()"
+      />
+
+      <p id="first"></p>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        value=""
+        placeholder="Please enter email"
+        id="email"
+        name="email"
+      />
+
+      <p id="email-error"></p>
+    </form>
+
+    <h4>Contact</h4>
+
+    <form>
+      <label for="age">Age</label>
+      <input
+        type="age"
+        value=""
+        placeholder="Please enter age"
+        id="age"
+        name="age"
+      />
+
+      <label for="contact">Contact</label>
+      <input
+        type="tel"
+        value=""
+        placeholder="Please enter contact"
+        id="contact"
+        name="contact"
+      />
+
+      <button type="click" onclick="captureUserInput()">Submit</button>
+    </form>
+
+    <form id="form">
+      <input
+        type="tel"
+        value=""
+        placeholder="Please enter contact"
+        id="contact"
+        name="contact"
+      />
+      <button>Submit</button>
+    </form>
+
+    <p id="test">Lorem</p>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
