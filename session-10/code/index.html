@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #one {
+        border: 1px solid black;
+        background-color: pink;
+        height: 120px;
+      }
+
+      #two {
+        background-color: orange;
+        height: 80px;
+      }
+
+      #three {
+        background-color: palegreen;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <!-- browser event  -->
+  <body
+    onload="
+      setTimeout(() => {
+        alert('Hi');
+      }, 5000)
+    "
+  >
+    <div id="one">
+      1
+      <div id="two">
+        2
+        <div id="three">3</div>
+      </div>
+    </div>
+
+    <button id="btn">Stop</button>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
