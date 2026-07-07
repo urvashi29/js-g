@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  background-color: pink;
+  width: 24%;
+  padding: 10px;
+  border: 1px solid black;
+  height: 200px;
+}
+
+@media screen and (max-width: 900px) {
+  .flex-container > div {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+}
+
+/* 400px and below  */
+@media screen and (max-width: 450px) {
+  .flex-container > div {
+    width: 98%;
+    margin-bottom: 10px;
+  }
+}
