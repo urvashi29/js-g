@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses | SkillTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 glass dark:border-slate-800"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 font-bold text-white shadow-lg shadow-indigo-300/40 dark:shadow-none"
+          >
+            S
+          </div>
+          <div>
+            <p class="font-bold leading-none">SkillTrack</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              Learning Operations
+            </p>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            href="index.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="nav-link active text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Requests</a
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="themeButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-lg transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow dark:border-slate-700 dark:bg-slate-900"
+            aria-label="Toggle theme"
+          >
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button
+            id="mobileButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 md:hidden dark:border-slate-700"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-900"
+      >
+        <div class="grid gap-2">
+          <a
+            href="index.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Requests</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section
+        class="reveal flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div>
+          <p class="text-sm font-semibold text-indigo-600">
+            Learning catalogue
+          </p>
+          <h1 class="mt-2 text-3xl font-bold">Recommended courses</h1>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">
+            Explore dummy learning paths across technical and business domains.
+          </p>
+        </div>
+        <select
+          id="courseFilter"
+          class="rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none dark:border-slate-700 dark:bg-slate-900"
+        >
+          <option value="all">All categories</option>
+          <option value="technology">Technology</option>
+          <option value="business">Business</option>
+          <option value="leadership">Leadership</option>
+        </select>
+      </section>
+
+      <section class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <article
+          data-category="technology"
+          class="card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-indigo-500 to-violet-700 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Technology</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Cloud Architecture</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Design scalable cloud systems using practical architecture
+              patterns.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>8 modules</span><span>12 hours</span>
+            </div>
+            <button
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+
+        <article
+          data-category="business"
+          class="course-card card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-cyan-500 to-blue-700 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Business</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Product Analytics</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Use metrics, funnels, and experiments to guide product decisions.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>6 modules</span><span>9 hours</span>
+            </div>
+            <button
+              onclick="showToast('Course added to learning plan')"
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+
+        <article
+          data-category="leadership"
+          class="course-card card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-amber-400 to-orange-600 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Leadership</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Managing Teams</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Build feedback, delegation, coaching, and conflict-resolution
+              skills.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>7 modules</span><span>10 hours</span>
+            </div>
+            <button
+              onclick="showToast('Course added to learning plan')"
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+
+        <article
+          data-category="technology"
+          class="course-card card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-emerald-500 to-teal-700 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Technology</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Data Engineering</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Build reliable pipelines for structured and event-driven data
+              systems.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>10 modules</span><span>16 hours</span>
+            </div>
+            <button
+              onclick="showToast('Course added to learning plan')"
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+
+        <article
+          data-category="business"
+          class="course-card card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-rose-500 to-pink-700 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Business</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Consultative Selling</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Structure discovery conversations and solution-oriented sales
+              pitches.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>5 modules</span><span>7 hours</span>
+            </div>
+            <button
+              onclick="showToast('Course added to learning plan')"
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+
+        <article
+          data-category="leadership"
+          class="course-card card-lift reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div
+            class="h-40 bg-gradient-to-br from-slate-600 to-slate-900 p-6 text-white"
+          >
+            <span class="rounded-full bg-white/15 px-3 py-1 text-xs"
+              >Leadership</span
+            >
+            <h2 class="mt-8 text-2xl font-bold">Strategic Thinking</h2>
+          </div>
+          <div class="p-6">
+            <p class="text-sm leading-6 text-slate-500 dark:text-slate-400">
+              Translate complex business problems into clear strategic
+              priorities.
+            </p>
+            <div class="mt-5 flex justify-between text-sm">
+              <span>6 modules</span><span>8 hours</span>
+            </div>
+            <button
+              onclick="showToast('Course added to learning plan')"
+              class="mt-5 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Add to plan
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer
+      class="mt-12 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8 dark:text-slate-400"
+      >
+        <p>© 2026 SkillTrack. Classroom demo application.</p>
+        <p>HTML · Tailwind CSS · JavaScript</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

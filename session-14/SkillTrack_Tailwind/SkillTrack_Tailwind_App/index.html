@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillTrack Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 glass dark:border-slate-800"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 font-bold text-white shadow-lg shadow-indigo-300/40 dark:shadow-none"
+          >
+            S
+          </div>
+          <div>
+            <p class="font-bold leading-none">SkillTrack</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              Learning Operations
+            </p>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            href="index.html"
+            class="nav-link active text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Requests</a
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="themeButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-lg transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow dark:border-slate-700 dark:bg-slate-900"
+            aria-label="Toggle theme"
+          >
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button
+            id="mobileButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 md:hidden dark:border-slate-700"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-900"
+      >
+        <div class="grid gap-2">
+          <a
+            href="index.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Requests</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section
+        class="hero-grid relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-12 text-white shadow-2xl sm:px-10 lg:flex lg:items-center lg:justify-between"
+      >
+        <div
+          class="absolute -right-16 -top-24 h-72 w-72 rounded-full bg-indigo-500/30 blur-3xl"
+        ></div>
+        <div
+          class="absolute -bottom-20 left-1/3 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl"
+        ></div>
+
+        <div class="relative max-w-2xl reveal">
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-indigo-300/20 bg-indigo-400/10 px-3 py-1 text-sm text-indigo-200"
+          >
+            <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-soft"></span>
+            Live learning operations
+          </span>
+          <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Build skills. Track growth.
+            <span class="gradient-text">Control budgets.</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+            A responsive Tailwind CSS application for managing employee
+            learning, course progress, and approval workflows.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="employees.html"
+              class="rounded-xl bg-white px-5 py-3 font-semibold text-slate-900 transition hover:-translate-y-1 hover:bg-indigo-50 hover:shadow-lg"
+              >Explore employees</a
+            >
+            <a
+              href="requests.html"
+              class="rounded-xl border border-slate-600 px-5 py-3 font-semibold transition hover:-translate-y-1 hover:bg-white/10"
+              >Review requests</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="relative mt-10 w-full max-w-sm rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur lg:mt-0 float-animation"
+        >
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm text-slate-300">Annual learning budget</p>
+              <p class="mt-2 text-3xl font-bold">₹12,00,000</p>
+            </div>
+            <span
+              class="rounded-full bg-emerald-400/15 px-3 py-1 text-sm text-emerald-300"
+              >On track</span
+            >
+          </div>
+          <div class="mt-6">
+            <div class="flex justify-between text-sm">
+              <span>Utilized</span><span>68%</span>
+            </div>
+            <div class="mt-2 h-3 overflow-hidden rounded-full bg-slate-700">
+              <div
+                class="progress-fill h-full rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400"
+                data-width="68%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <article
+          class="card-lift reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-indigo-300 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Active learners
+          </p>
+          <p class="mt-2 text-3xl font-bold" data-counter="128">0</p>
+          <p class="mt-3 text-sm font-medium text-emerald-600">
+            ↑ 8 this month
+          </p>
+        </article>
+        <article
+          class="card-lift reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-indigo-300 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Courses completed
+          </p>
+          <p class="mt-2 text-3xl font-bold" data-counter="346">0</p>
+          <p class="mt-3 text-sm font-medium text-emerald-600">
+            82% completion rate
+          </p>
+        </article>
+        <article
+          class="card-lift reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-indigo-300 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Pending requests
+          </p>
+          <p class="mt-2 text-3xl font-bold" data-counter="14">0</p>
+          <p class="mt-3 text-sm font-medium text-amber-600">
+            3 need attention
+          </p>
+        </article>
+        <article
+          class="card-lift reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-indigo-300 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Certifications
+          </p>
+          <p class="mt-2 text-3xl font-bold" data-counter="73">0</p>
+          <p class="mt-3 text-sm font-medium text-cyan-600">
+            ↑ 12% this quarter
+          </p>
+        </article>
+      </section>
+
+      <section class="mt-8 grid gap-6 lg:grid-cols-3">
+        <article
+          class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2 dark:border-slate-800 dark:bg-slate-900"
+        >
+          <h2 class="text-xl font-bold">Department progress</h2>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            Assigned course completion by department
+          </p>
+          <div class="mt-7 space-y-6">
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span>Engineering</span><span>88%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-100 dark:bg-slate-800">
+                <div
+                  class="progress-fill h-full rounded-full bg-indigo-600"
+                  data-width="88%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span>Product</span><span>76%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-100 dark:bg-slate-800">
+                <div
+                  class="progress-fill h-full rounded-full bg-cyan-500"
+                  data-width="76%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-2 flex justify-between text-sm">
+                <span>Sales</span><span>64%</span>
+              </div>
+              <div class="h-3 rounded-full bg-slate-100 dark:bg-slate-800">
+                <div
+                  class="progress-fill h-full rounded-full bg-amber-500"
+                  data-width="64%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article
+          class="reveal rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-500 p-6 text-white shadow-xl"
+        >
+          <p class="text-sm text-indigo-100">Next review</p>
+          <h2 class="mt-2 text-2xl font-bold">Quarterly learning review</h2>
+          <p class="mt-3 text-sm leading-6 text-indigo-50">
+            Prepare department reports before 24 July 2026.
+          </p>
+          <button
+            onclick="showToast('Report preparation started')"
+            class="mt-6 rounded-xl bg-white px-4 py-2.5 font-semibold text-indigo-700 transition hover:-translate-y-1 hover:shadow-lg"
+          >
+            Prepare report
+          </button>
+        </article>
+      </section>
+    </main>
+
+    <footer
+      class="mt-12 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8 dark:text-slate-400"
+      >
+        <p>© 2026 SkillTrack. Classroom demo application.</p>
+        <p>HTML · Tailwind CSS · JavaScript</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

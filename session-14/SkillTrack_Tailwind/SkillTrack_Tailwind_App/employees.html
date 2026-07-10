@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees | SkillTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 glass dark:border-slate-800"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 font-bold text-white shadow-lg shadow-indigo-300/40 dark:shadow-none"
+          >
+            S
+          </div>
+          <div>
+            <p class="font-bold leading-none">SkillTrack</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              Learning Operations
+            </p>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            href="index.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="nav-link active text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Requests</a
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="themeButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-lg transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow dark:border-slate-700 dark:bg-slate-900"
+            aria-label="Toggle theme"
+          >
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button
+            id="mobileButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 md:hidden dark:border-slate-700"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-900"
+      >
+        <div class="grid gap-2">
+          <a
+            href="index.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Requests</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section
+        class="reveal flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div>
+          <p class="text-sm font-semibold text-indigo-600">People directory</p>
+          <h1 class="mt-2 text-3xl font-bold">Employee learning activity</h1>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">
+            Search employees and review their active learning plans.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="reveal mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900"
+      >
+        <div class="border-b border-slate-200 p-5 dark:border-slate-800">
+          <input
+            id="employeeSearch"
+            type="search"
+            placeholder="Search by employee, department, or course..."
+            class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 dark:border-slate-700 dark:bg-slate-800 dark:focus:ring-indigo-950"
+          />
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left">
+            <thead
+              class="bg-slate-50 text-xs uppercase text-slate-500 dark:bg-slate-800/60"
+            >
+              <tr>
+                <th class="px-6 py-4">Employee</th>
+                <th class="px-6 py-4">Course</th>
+                <th class="px-6 py-4">Progress</th>
+                <th class="px-6 py-4">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+              <tr
+                class="employee-row transition hover:bg-indigo-50/60 dark:hover:bg-slate-800/70"
+              >
+                <td class="px-6 py-5">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="grid h-11 w-11 place-items-center rounded-full bg-indigo-100 font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
+                    >
+                      AR
+                    </div>
+                    <div>
+                      <p class="font-semibold">Ananya Rao</p>
+                      <p class="text-sm text-slate-500">Engineering</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-5">AWS Solutions Architect</td>
+                <td class="min-w-48 px-6 py-5">
+                  <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+                    <div
+                      class="progress-fill h-full rounded-full bg-indigo-600"
+                      data-width="82%"
+                    ></div>
+                  </div>
+                  <p class="mt-2 text-sm">82%</p>
+                </td>
+                <td class="px-6 py-5">
+                  <span
+                    class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+                    >On track</span
+                  >
+                </td>
+              </tr>
+              <tr
+                class="employee-row transition hover:bg-indigo-50/60 dark:hover:bg-slate-800/70"
+              >
+                <td class="px-6 py-5">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="grid h-11 w-11 place-items-center rounded-full bg-cyan-100 font-bold text-cyan-700 dark:bg-cyan-950 dark:text-cyan-300"
+                    >
+                      KM
+                    </div>
+                    <div>
+                      <p class="font-semibold">Karan Mehta</p>
+                      <p class="text-sm text-slate-500">Product</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-5">Product Analytics</td>
+                <td class="min-w-48 px-6 py-5">
+                  <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+                    <div
+                      class="progress-fill h-full rounded-full bg-cyan-500"
+                      data-width="64%"
+                    ></div>
+                  </div>
+                  <p class="mt-2 text-sm">64%</p>
+                </td>
+                <td class="px-6 py-5">
+                  <span
+                    class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+                    >At risk</span
+                  >
+                </td>
+              </tr>
+              <tr
+                class="employee-row transition hover:bg-indigo-50/60 dark:hover:bg-slate-800/70"
+              >
+                <td class="px-6 py-5">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="grid h-11 w-11 place-items-center rounded-full bg-rose-100 font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300"
+                    >
+                      PN
+                    </div>
+                    <div>
+                      <p class="font-semibold">Priya Nair</p>
+                      <p class="text-sm text-slate-500">Sales</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-5">Consultative Selling</td>
+                <td class="min-w-48 px-6 py-5">
+                  <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+                    <div
+                      class="progress-fill h-full rounded-full bg-emerald-500"
+                      data-width="100%"
+                    ></div>
+                  </div>
+                  <p class="mt-2 text-sm">100%</p>
+                </td>
+                <td class="px-6 py-5">
+                  <span
+                    class="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 dark:bg-blue-950 dark:text-blue-300"
+                    >Completed</span
+                  >
+                </td>
+              </tr>
+              <tr
+                class="employee-row transition hover:bg-indigo-50/60 dark:hover:bg-slate-800/70"
+              >
+                <td class="px-6 py-5">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="grid h-11 w-11 place-items-center rounded-full bg-amber-100 font-bold text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+                    >
+                      VS
+                    </div>
+                    <div>
+                      <p class="font-semibold">Vikram Shah</p>
+                      <p class="text-sm text-slate-500">Operations</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-6 py-5">Lean Operations</td>
+                <td class="min-w-48 px-6 py-5">
+                  <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+                    <div
+                      class="progress-fill h-full rounded-full bg-rose-500"
+                      data-width="38%"
+                    ></div>
+                  </div>
+                  <p class="mt-2 text-sm">38%</p>
+                </td>
+                <td class="px-6 py-5">
+                  <span
+                    class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-950 dark:text-rose-300"
+                    >Delayed</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-12 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8 dark:text-slate-400"
+      >
+        <p>© 2026 SkillTrack. Classroom demo application.</p>
+        <p>HTML · Tailwind CSS · JavaScript</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

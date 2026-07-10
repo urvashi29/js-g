@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requests | SkillTrack</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 glass dark:border-slate-800"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 font-bold text-white shadow-lg shadow-indigo-300/40 dark:shadow-none"
+          >
+            S
+          </div>
+          <div>
+            <p class="font-bold leading-none">SkillTrack</p>
+            <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              Learning Operations
+            </p>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            href="index.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="nav-link active text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >Requests</a
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="themeButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 bg-white text-lg transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow dark:border-slate-700 dark:bg-slate-900"
+            aria-label="Toggle theme"
+          >
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button
+            id="mobileButton"
+            class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 md:hidden dark:border-slate-700"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-900"
+      >
+        <div class="grid gap-2">
+          <a
+            href="index.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Dashboard</a
+          >
+          <a
+            href="employees.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Employees</a
+          >
+          <a
+            href="courses.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Courses</a
+          >
+          <a
+            href="requests.html"
+            class="rounded-lg px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >Requests</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section class="reveal">
+        <p class="text-sm font-semibold text-indigo-600">Approval workflow</p>
+        <h1 class="mt-2 text-3xl font-bold">Learning requests</h1>
+        <p class="mt-2 text-slate-500 dark:text-slate-400">
+          Review employee requests and demonstrate interactive status updates.
+        </p>
+      </section>
+
+      <section class="mt-8 grid gap-6 lg:grid-cols-2">
+        <article
+          class="request-card card-lift reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm text-slate-500">Ananya Rao · Engineering</p>
+              <h2 class="mt-1 text-xl font-bold">AWS Solutions Architect</h2>
+            </div>
+            <span
+              class="request-status rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+              >Pending</span
+            >
+          </div>
+          <div
+            class="mt-5 grid grid-cols-2 gap-4 rounded-xl bg-slate-50 p-4 text-sm dark:bg-slate-800"
+          >
+            <div>
+              <p class="text-slate-500">Cost</p>
+              <p class="mt-1 font-bold">₹18,500</p>
+            </div>
+            <div>
+              <p class="text-slate-500">Duration</p>
+              <p class="mt-1 font-bold">10 weeks</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-6 text-slate-500 dark:text-slate-400">
+            Required for upcoming cloud migration responsibilities.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <button
+              class="approve-btn flex-1 rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Approve</button
+            ><button
+              class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+            >
+              Review
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="request-card card-lift reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm text-slate-500">Karan Mehta · Product</p>
+              <h2 class="mt-1 text-xl font-bold">Advanced Product Analytics</h2>
+            </div>
+            <span
+              class="request-status rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+              >Pending</span
+            >
+          </div>
+          <div
+            class="mt-5 grid grid-cols-2 gap-4 rounded-xl bg-slate-50 p-4 text-sm dark:bg-slate-800"
+          >
+            <div>
+              <p class="text-slate-500">Cost</p>
+              <p class="mt-1 font-bold">₹12,000</p>
+            </div>
+            <div>
+              <p class="text-slate-500">Duration</p>
+              <p class="mt-1 font-bold">6 weeks</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-6 text-slate-500 dark:text-slate-400">
+            Supports experimentation and retention analysis responsibilities.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <button
+              class="approve-btn flex-1 rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Approve</button
+            ><button
+              onclick="showToast('Request opened for review')"
+              class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+            >
+              Review
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="request-card card-lift reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm text-slate-500">Vikram Shah · Operations</p>
+              <h2 class="mt-1 text-xl font-bold">Lean Six Sigma Green Belt</h2>
+            </div>
+            <span
+              class="request-status rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700 dark:bg-rose-950 dark:text-rose-300"
+              >Urgent</span
+            >
+          </div>
+          <div
+            class="mt-5 grid grid-cols-2 gap-4 rounded-xl bg-slate-50 p-4 text-sm dark:bg-slate-800"
+          >
+            <div>
+              <p class="text-slate-500">Cost</p>
+              <p class="mt-1 font-bold">₹22,500</p>
+            </div>
+            <div>
+              <p class="text-slate-500">Duration</p>
+              <p class="mt-1 font-bold">12 weeks</p>
+            </div>
+          </div>
+          <p class="mt-5 text-sm leading-6 text-slate-500 dark:text-slate-400">
+            Needed for process-improvement ownership in the next quarter.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <button
+              class="approve-btn flex-1 rounded-xl bg-indigo-600 py-3 font-semibold text-white hover:bg-indigo-700"
+            >
+              Approve</button
+            ><button
+              onclick="showToast('Request opened for review')"
+              class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+            >
+              Review
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer
+      class="mt-12 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:justify-between sm:px-6 lg:px-8 dark:text-slate-400"
+      >
+        <p>© 2026 SkillTrack. Classroom demo application.</p>
+        <p>HTML · Tailwind CSS · JavaScript</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
